@@ -7,7 +7,7 @@
   <ip address='192.168.123.1' netmask='255.255.255.0'>
     <dhcp>
       <range start='192.168.123.2' end='192.168.123.254'/>
-      <bootp file='http://192.168.123.1:8080/fcos.ipxe'/>
+      <bootp file='http://192.168.123.1/fcos.ipxe'/>
     </dhcp>
   </ip>
 </network>

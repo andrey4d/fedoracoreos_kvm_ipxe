@@ -33,5 +33,5 @@ passwd:
 
 ## 4 Create VM
 ```shell
-./create-vm-master.sh
+./04_create-vm-master.sh
 ```

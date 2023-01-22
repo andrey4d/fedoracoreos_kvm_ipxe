@@ -28,4 +28,4 @@ ${SUDO}  virt-install --connect="qemu:///system" \
 
 ${DOCKER} kill http-server
 
-echo "+++ VM IP : $(virsh domifaddr ${VM_NAME} | grep ipv4|awk  '{print $4}')"
+#echo "+++ VM IP : $(virsh domifaddr ${VM_NAME} | grep ipv4|awk  '{print $4}')"

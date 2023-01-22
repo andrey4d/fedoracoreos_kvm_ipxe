@@ -9,13 +9,9 @@
 ```shell
 02_ign-gen.sh
 ```
-## 3. Create network
+## 3. Create VM
 ```shell
-./03_create-network.sh
-```
-## 4. Create VM
-```shell
-./04_create-vm-master.sh
+./03_create-vm-master.sh
 ```
 
 ### Edit fcos-config.yml

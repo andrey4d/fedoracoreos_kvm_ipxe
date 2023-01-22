@@ -5,4 +5,6 @@ DISK_GB="20"
 STREAM="stable"
 NETWORK="coreosnetwork"
 
+SUDO="sudo"
+
 . create-ipxe.sh

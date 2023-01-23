@@ -1,6 +1,6 @@
 # fedoracoreos_kvm_ipxe
 ### Create VM Fedora CoreOS use ipxe boot
-## 3. Create VM
+## Create VM
 ```shell
 ./01_create-vm-master.sh
 ```

@@ -11,7 +11,7 @@
 ```
 ## 3. Create VM
 ```shell
-./03_create-vm-master.sh
+./01_create-vm-master.sh
 ```
 
 ### Edit fcos-config.yml

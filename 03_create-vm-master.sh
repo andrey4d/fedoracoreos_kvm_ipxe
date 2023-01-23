@@ -7,4 +7,4 @@ NETWORK="coreosnetwork"
 
 SUDO="sudo"
 
-. create-ipxe.sh
+. ./create-ipxe.sh

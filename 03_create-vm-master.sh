@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 VM_NAME="fcos37-master"
 VCPUS="4"
 RAM_MB="6048"

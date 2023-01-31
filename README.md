@@ -18,3 +18,10 @@ passwd:
 #       public key cat ~/.ssh/id_rsa.pub
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC...........
 ```
+
+### Virsh
+```shell
+virsh connect qemu+libssh2://user@host/system
+virt-manager -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
+virt-viewer -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
+```

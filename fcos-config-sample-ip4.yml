@@ -1,0 +1,31 @@
+variant: fcos
+version: 1.4.0
+passwd:
+  users:
+    - name: core
+#     default password = password (make hash ./password.sh)
+#      password_hash: "$y$j9T$IhkUF7pj2rOJGzcvj7xad/$LK5p3T298qXuDasicX5pv7an9agjQcBHLMIPXJgxhW0"
+      ssh_authorized_keys:
+#       public key cat  cat ~/.ssh/id_rsa.pub
+#        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC...........
+storage:
+  files:
+    - path: /etc/NetworkManager/system-connections/enp1s0.nmconnection
+      mode: 0600
+      contents:
+        inline: |
+          [connection]
+          id=Uplink
+          type=802-3-ethernet
+          autoconnect=true
+          interface-name=eth0
+          match-device=interface-name:eth0
+          uuid=<randomly generated>
+          [ethernet]
+          mac-address=<generated mac address for vm>
+          [ipv4]
+          method=manual
+          addresses=192.0.2.1/24
+          gateway=192.0.2.255
+          dns=192.0.2.53
+          dns-search=example.com

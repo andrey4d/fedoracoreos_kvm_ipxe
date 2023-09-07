@@ -1,0 +1,11 @@
+[fedora-cisco-openh264]
+name=NEXUS Fedora $releasever openh264 (From Cisco) - $basearch
+baseurl=https://{{ repository }}/repository/fedora-codecs-home/openh264/$releasever/$basearch/os/
+type=rpm
+enabled=1
+metadata_expire=14d
+repo_gpgcheck=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=True
+sslverify=0

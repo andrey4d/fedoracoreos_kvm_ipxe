@@ -21,7 +21,7 @@ storage:
         inline: |
           [fedora]
           name=NEXUS Fedora $releasever - $basearch
-          baseurl=http://192.168.1.80:8081/repository/fedora-home/releases/$releasever/Everything/$basearch/os/
+          baseurl=https://registry.home.local/repository/fedora-home/releases/$releasever/Everything/$basearch/os/
           enabled=1
           countme=1
           metadata_expire=7d
@@ -38,7 +38,7 @@ storage:
         inline: |
           [updates]
           name=NEXUS Fedora $releasever - $basearch - Updates
-          baseurl=http://192.168.1.80:8081/repository/fedora-home/updates/$releasever/Everything/$basearch/
+          baseurl=https://registry.home.local/repository/fedora-home/updates/$releasever/Everything/$basearch/
           enabled=1
           countme=1
           repo_gpgcheck=0
@@ -55,7 +55,7 @@ storage:
         inline: |
           [updates-modular]
           name=NEXUS Fedora Modular $releasever - $basearch - Updates
-          baseurl=http://192.168.1.80:8081/repository/fedora-home/updates/$releasever/Modular/$basearch/
+          baseurl=https://registry.home.local/repository/fedora-home/updates/$releasever/Modular/$basearch/
           enabled=1
           countme=1
           repo_gpgcheck=0
@@ -72,7 +72,7 @@ storage:
         inline: |
           [fedora-modular]
           name=NEXUS Fedora Modular $releasever - $basearch
-          baseurl=http://192.168.1.80:8081/repository/fedora-home/releases/$releasever/Modular/$basearch/os/
+          baseurl=https://registry.home.local/repository/fedora-home/releases/$releasever/Modular/$basearch/os/
           enabled=1
           countme=1
           metadata_expire=7d
@@ -89,7 +89,7 @@ storage:
         inline: |
           [fedora-cisco-openh264]
           name=NEXUS Fedora $releasever openh264 (From Cisco) - $basearch
-          baseurl=http://192.168.1.80:8081/repository/fedora-codecs-home/openh264/$releasever/$basearch/os/
+          baseurl=https://registry.home.local/repository/fedora-codecs-home/openh264/$releasever/$basearch/os/
           type=rpm
           enabled=1
           metadata_expire=14d
@@ -105,7 +105,7 @@ storage:
         inline: |
           [kubernetes]
           name=NEXUS Kubernetes
-          baseurl=http://192.168.1.80:8081/repository/kubernetes-home/
+          baseurl=https://registry.home.local/repository/kubernetes-home/
           enabled=1
           gpgcheck=1
           repo_gpgcheck=0
@@ -124,6 +124,11 @@ storage:
         inline: |
           net.bridge.bridge-nf-call-iptables=1
           net.ipv4.ip_forward=1
+    - path: /etc/hosts
+      overwrite: true
+      contents:
+        inline: |
+          192.168.1.80 registry.home.local
 passwd: # setting login credentials
   users:
     - name: core

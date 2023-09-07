@@ -1,0 +1,15 @@
+all:
+  vars:
+    ansible_user: core
+    # ansible_ssh_private_key_file: ~/.ssh/id_rsa.dev.ppod
+    # ansible_python_interpreter: /usr/bin/python3
+  children:
+    bootstrap:
+      vars:
+        repository: registry.home.local
+        repository_ip: 192.168.1.80
+      hosts:
+        master01.home.local:
+        worker01.home.local:
+        worker02.home.local:
+        frontend01.home.local:

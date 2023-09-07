@@ -1,0 +1,8 @@
+---
+
+- name: Add a line to /etc/hosts
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: "{{ repository_ip }} {{ repository }}"
+    create: yes

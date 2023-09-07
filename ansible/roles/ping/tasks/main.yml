@@ -1,0 +1,17 @@
+---
+# tasks file for ping
+- name: Ping {{ inventory_hostname }}
+  ping:
+
+
+#- name: Create time-stamp
+##  when: cl_backup
+#  set_fact:
+#    cl_timestamp: "{{ '%Y-%m-%d_%H_%M_%S'|strftime }}"
+#
+#- name: Backup config
+#  copy:
+#    src: "{{ item.path }}"
+#    remote_src: yes
+#    dest: "{{ item.path }}_{{ cl_timestamp }}.bak"
+#  with_items: "{{ files_to_mv.files }}"

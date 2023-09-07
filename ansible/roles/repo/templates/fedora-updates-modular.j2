@@ -1,0 +1,12 @@
+[updates-modular]
+name=NEXUS Fedora Modular $releasever - $basearch - Updates
+baseurl=https://{{ repository }}/repository/fedora-home/updates/$releasever/Modular/$basearch/
+enabled = 0
+countme=1
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+metadata_expire=6h
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+sslverify=0

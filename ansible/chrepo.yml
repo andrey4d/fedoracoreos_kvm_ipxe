@@ -1,0 +1,11 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts:
+    - all
+#  gather_facts: no
+  roles:
+    - role: repo
+    - role: hosts
+    # - role: ping
+    #   vars:
+    #    desc: "show all nodes"

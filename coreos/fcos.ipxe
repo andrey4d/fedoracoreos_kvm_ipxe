@@ -2,7 +2,7 @@
 
 set STREAM stable
 #set VERSION 37.20221225.3.0
-set VERSION 37.20230110.3.1
+set VERSION 38.20231027.3.1
 set INSTALLDEV /dev/vda
 
 set dns 192.168.123.1

@@ -1,13 +1,14 @@
 #!/usr/bin/env ansible-playbook
 ---
 - hosts:
-    - all
+    - worker01.home.local
+    - worker02.home.local
+    - frontend01.home.local
 
 #  gather_facts: no
   roles:
-    - role: repo
-    # - role: hosts
-    # - role: add_disk
+    - role: add_disk
+      become: yes
     # - role: ping
     #   vars:
     #    desc: "show all nodes"

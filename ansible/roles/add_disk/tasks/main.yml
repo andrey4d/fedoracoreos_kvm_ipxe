@@ -1,0 +1,60 @@
+---
+- name: Install parted
+  become: true
+  community.general.rpm_ostree_pkg:
+    name: parted
+    state: present
+
+- name: Unconditionally reboot the machine with all defaults
+  become: true
+  ansible.builtin.reboot:
+
+
+- name: Add partition
+  become: true
+  community.general.parted:
+    device: /dev/vdb
+    name: storage
+    state: present
+    number: 1
+    fs_type: xfs
+    label: gpt
+
+- name: Create a xfs filesystem on /dev/vdb1
+  filesystem:
+    fstype: xfs
+    dev: /dev/vdb1
+    force: yes
+    opts: "-L storage"    
+
+- name: Create a directory if it does not exist
+  become: true
+  ansible.builtin.file:
+    path: /var/storage
+    state: directory
+
+    # mode: '0755'
+
+- name: Copy system unit
+  become: true
+  ansible.builtin.template:
+    src: templates/var-storage.j2
+    dest:  /etc/systemd/system/var-storage.mount
+
+
+- name: Just force systemd to reread configs 
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+
+- name: Enable a timer unit for dnf-automatic
+  become: true
+  ansible.builtin.systemd:
+    name: var-storage.mount
+    state: started
+    enabled: true
+
+
+- name: Unconditionally reboot the machine with all defaults
+  become: true
+  ansible.builtin.reboot:

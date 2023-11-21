@@ -1,0 +1,12 @@
+# /etc/systemd/system/var-storage.mount
+[Unit]
+Before=local-fs.target
+ConditionPathExists=/var/storage
+
+[Mount]
+What=/dev/disk/by-label/storage
+Where=/var/storage
+Type=xfs
+
+[Install]
+WantedBy=local-fs.target

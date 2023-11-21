@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /.idea/
 run_http.sh
+fcoreos_config

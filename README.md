@@ -25,8 +25,3 @@ virsh connect qemu+libssh2://user@host/system
 virt-manager -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
 virt-viewer -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
 ```
-
-```shell
-sudo nmcli connection modify Wired\ connection\ 1 ipv4.dns 8.8.8.8
-sudo nmcli connection modify Wired\ connection\ 1 ipv4.dns-search cluster.local
-```

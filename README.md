@@ -25,3 +25,7 @@ virsh connect qemu+libssh2://user@host/system
 virt-manager -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
 virt-viewer -c 'qemu+ssh://user@libvirthost/system?socket=/var/run/libvirt/libvirt-sock'
 ```
+
+
+[core@worker03 ~]$ sudo nmcli con mod Wired\ connection\ 1  ipv4.ignore-auto-dns yes
+[core@worker03 ~]$ sudo nmcli con mod Wired\ connection\ 1  ipv4.dns "192.168.1.50 192.168.1.80"

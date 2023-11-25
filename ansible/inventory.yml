@@ -12,4 +12,5 @@ all:
         master01.home.local:
         worker01.home.local:
         worker02.home.local:
+        worker03.home.local:
         frontend01.home.local:
